@@ -1,0 +1,45 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+/* ESTILOS GERAIS */
+body{
+    font-family: "segoe UI";
+    color: black;
+    background-color: rgb(0, 130, 243);
+    line-height: 1.6;
+     /* ALTURA DA LINHA */
+}
+/* CABEÇALHO */
+header {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+}
+/* FOOTER */
+footer{
+    background-color: rgb(0, 0, 0);
+    color: beige;
+    margin-top: 2rem;
+    padding: 1rem 0.75rem;
+}
+/* CONTEUDO CENTRAL */
+main{
+    width: 1300px;
+    min-height: 100vh;
+    margin: 1.5rem auto;
+    padding: 1rem 3rem;
+    background-color: rgb(135, 199, 212);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,08);
+}
+
+img{
+    border-radius: 8px;
+}
+
+h1,h2,h3,p{
+    padding: 10px;
+}

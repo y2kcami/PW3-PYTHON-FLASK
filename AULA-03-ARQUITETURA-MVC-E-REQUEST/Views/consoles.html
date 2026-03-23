@@ -1,0 +1,29 @@
+<!--IMPORTANDO O TEMPLATE BASE-->
+{% extends 'base.html'%}
+
+{% block content %}
+
+<main>
+    <h1>CONSOLES EM DESTAQUE</h1>
+    <hr>
+
+    <h3>Informações do Console/Jogo</h3>
+    <ul>
+        {% for chave, valor in game.items() %}
+            <li>{{ chave }}: {{ valor }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Jogadores</h3>
+    <ol>
+        {% for jogador in jogadores %}
+            <li>{{ jogador }}</li>
+        {% endfor %}
+    </ol>
+
+    <hr>
+
+    <p><a href="/">VOLTAR</a></p>
+</main>
+
+{% endblock content %}
