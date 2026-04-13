@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg,#0f0f0f,#1a1a1a,#330000,#660000);
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-bottom: 2px solid #ff0000;
+}
+
+header h1 {
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ff1a1a;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #ff0000;
+    padding: 6px 10px;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navbar .nav-link {
+    color: #fff !important;
+    font-size: 13px;
+    padding: 5px 10px;
+}
+
+.navbar .nav-link:hover {
+    color: #ff1a1a !important;
+}
+
+.navbar .nav-link.active {
+    color: #ff1a1a !important;
+    font-weight: bold;
+}
+.navbar form {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .form-control {
+    font-size: 12px;
+    padding: 4px 8px;
+    height: 28px;
+}
+
+
+.navbar .btn {
+    font-size: 11px;
+    padding: 4px 8px;
+    height: 28px;
+}
+
+.navbar-toggler {
+    border-color: #fff !important;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff1a1a;
+}
+
+h2,h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+.form-control,
+input,
+textarea,
+select {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    color: #fff !important;
+    border: 1px solid #ff1a1a !important;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 10px #ff0000 !important;
+}
+
+.btn {
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn-success {
+    background: #00cc66;
+    border: none;
+}
+
+.btn-success:hover {
+    background: #00a653;
+}
+
+.btn-danger {
+    background: #cc0000;
+    border: none;
+}
+
+.btn-danger:hover {
+    background: #990000;
+}
+
+/* TABELA */
+.table {
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.table thead {
+    background: linear-gradient(90deg,#ff0000,#990000);
+}
+
+.table tbody tr {
+    background: rgba(255,255,255,0.03);
+    transition: 0.3s;
+}
+
+.table tbody tr:hover {
+    background: rgba(255,0,0,0.25);
+}
+
+
+.table tbody td {
+    color: #ff1a1a !important;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #ccc;
+    padding: 15px;
+}
+
+
+a {
+    color: #ff1a1a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
