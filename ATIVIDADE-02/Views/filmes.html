@@ -1,0 +1,39 @@
+<!--IMPORTANDO O TEMPLATE BASE-->
+{% extends 'base.html'%}
+
+{% block content %}
+
+<main>
+    <h1>NOSSO CINEMINHA</h1>
+    <hr>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>FILME</th>
+                <th>ANO DE LANÇAMENTO</th>
+                <th>GÊNERO</th>
+                <th>NOTA</th>
+                <th>DURAÇÃO</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for filme in listaFilmes %}
+            <tr>
+                <td>{{ filme.nome }}</td>
+                <td>{{ filme.ano }}</td>
+                <td>{{ filme.genero }}</td>
+                <td>{{ filme.nota }}</td>
+                <td>{{ filme.duracao }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <hr>
+
+    <p><a href="/">VOLTAR</a></p>
+</main>
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+<!--IMPORTANDO O TEMPLATE BASE-->
+{% extends 'base.html'%}
+
+{% block content %}
+
+<main>
+<h1>BEM-VINDO AO UNIVERSO CINEMÁTICO!</h1>
+<h3>SEU SITE FAVORITO DE FILMES!</h3>
+<hr>
+
+<p><a href="/filmes">FILMES</a></p>
+<hr>
+<div class="container">
+    <img src="{{ url_for('static', filename='imgs/cinema.png') }}" alt="UNIVERSO CINEMÁTICO" width="300px">
+</div>
+
+</main>
+
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Cadastro de Filmes</h2>
+<hr>
+
+<form action="{{ url_for('cadfilmes') }}" method="POST">
+    
+    <label>Nome do Filme</label>
+    <input type="text" name="nome" placeholder="Insira o nome do filme" class="form-control" required>
+
+    <label>Ano de Lançamento</label>
+    <input type="number" name="ano" min="1950" max="2026" placeholder="Insira o ano" class="form-control" required>
+
+    <label>Gênero</label>
+    <input type="text" name="genero" placeholder="Insira o gênero do filme" class="form-control" required>
+
+    <label>Nota</label>
+    <input type="number" name="nota" min="0" max="10" step="1" placeholder="Nota do filme" class="form-control">
+
+    <label>Duração (hora/minutos)</label>
+    <input type="text" name="duracao" min="10" placeholder="Duração do filme" class="form-control">
+
+    <input type="submit" value="Cadastrar" class="btn btn-success">
+    <input type="reset" value="Limpar" class="btn btn-danger">
+
+</form>
+
+<br>
+<hr>
+
+<h4>Filmes Cadastrados</h4>
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>FILME</th>
+            <th>ANO DE LANÇAMENTO</th>
+            <th>GÊNERO</th>
+            <th>NOTA</th>
+            <th>DURAÇÃO</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for filme in listaFilmes %}
+        <tr>
+            <td>{{ filme.nome }}</td>
+            <td>{{ filme.ano }}</td>
+            <td>{{ filme.genero }}</td>
+            <td>{{ filme.nota }}</td>
+            <td>{{ filme.duracao }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
