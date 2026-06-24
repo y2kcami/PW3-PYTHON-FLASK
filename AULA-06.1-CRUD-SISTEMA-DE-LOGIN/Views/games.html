@@ -1,42 +1,21 @@
-<!-- Importando o template base -->
 {% extends 'base.html' %}
-
 {% block content %}
-
 <main>
-    <h1>Jogos em destaque</h1>
-    <hr>
-
+    <h1>Games</h1>
+    <h2>Jogo em destaque</h2>
+    <p>Game mais jogado pelos nossos usuários:</p>
     <ul>
-        <li>Título: {{ titulo }}</li>
-        <li>Ano: {{ ano }}</li>
-        <li>Categoria: {{ categoria }}</li>
+        {# Este é um comentário em Jinja2 (Python e Flask) #}
+        <li>Título: <strong>{{titulo}}</strong></li>
+        <li>Ano: <strong>{{ano}}</strong></li>
+        <li>Categoria: <strong>{{ categoria }}</strong></li>
+        <p>O jogo {{titulo}} tem {{2026 - ano}} anos!</p>
     </ul>
-
-    <p>O jogo {{titulo}} tem {{ 2026 - ano }} ano.</p>
-
-    <h3>Top Players - Ranking</h3>
-
+    <h3>Top Players (Ranking de jogadores)</h3>
     <ol>
-        <!-- FOR PARA EXIBIR LISTAS (VETORES) -->
-        {% for jogador in jogadores %}
-            <li>{{ jogador }}</li>
+        {% for jogador in jogadores: %}
+        <li>{{ jogador }}</li>
         {% endfor %}
     </ol>
-
-    <hr>
-
-    <h3>Jogo do ano:</h3>
-
-    <!-- FOR PARA EXIBIR OBJETO (DICIONÁRIO) -->
-     {% for chave, valor in game.items() %}
-        <details>
-            <summary>{{chave}}</summary>
-            <p>{{valor}}</p>
-        </details>
-     {% endfor %}
-
-    <p><a href="/">Voltar</a></p>
 </main>
-
 {% endblock content %}

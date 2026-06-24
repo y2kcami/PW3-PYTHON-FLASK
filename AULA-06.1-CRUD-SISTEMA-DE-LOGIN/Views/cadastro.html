@@ -1,39 +1,30 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-{% with messages = get_flashed_messages(with_categories=True) %}
-
-{% for category, message in messages %}
-    <div class="alert alert-{{ 'danger' if category == 'error' else category }}">
-        {{ message }}
-    </div>
-{% endfor %}
-
-{% endwith %}
-
-<div class="container">
+<!-- BUSCANDO E EXIBINDO AS FLASH MASSEGES -->
+ {% with messages = get_flashed_messages(with_categories=true) %}
+ {% for category, message in messages %}
+ <div class="alert alert-{{category}}">
+    {{message}}
+ </div>
+ {% endfor %}
+ {% endwith %}
+<!-- FORMULÁRIO DE CADASTRO -->
+ <div class="container">
     <div class="card mt-4">
         <div class="card-header">
-            <h2>CADASTRO DE USUÁRIOS</h2>
+            <h2>Cadastro de Usuário</h2>
         </div>
-
         <div class="card-body">
-            <form action="{{ url_for('cadastro') }}" method="POST">
-
+            <!-- FORMULÁRIO -->
+            <form action="{{url_for('cadastro')}}" method="POST">
                 <label>E-mail</label>
-                <input type="email" name="email" placeholder="Insira seu e-mail" class="form-control" required>
-
-                <label class="mt-3">Senha</label>
-                <input type="password" name="senha" placeholder="Insira sua senha" class="form-control" required>
-
-                <button type="submit" class="btn btn-danger w-100 mt-3">
-                    Cadastrar
-                </button>
-
+                <input type="email" name="email" placeholder="Insira seu e-mail" class="form-control">
+                <label>Senha</label>
+                <input type="password" name="senha" placeholder="Insira sua senha" class="form-control">
+                <button type="submit" class="btn btn-danger btn-block">Cadastrar</button>
             </form>
         </div>
     </div>
-</div>
-
+ </div>                 
 {% endblock content %}
