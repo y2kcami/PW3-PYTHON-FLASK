@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Removido o {{listaJogos}} daqui -->
+
+<!-- Correção nas aspas e ponto e vírgula do style -->
+<div class="container my-4" style="background-color: azure; border-radius: 8px; padding: 20px;">
+    <div class="row g-4"> <!-- g-4 adiciona espaçamento automático entre as linhas e colunas -->
+        {% for jogo in listaJogos %}
+        <div class="col-md-3 d-flex align-items-stretch"> <!-- Garante que todos os cards tenham a mesma altura na linha -->
+            <div class="card" style="width: 100%;"> <!-- Usar 100% faz o card respeitar o tamanho da col-md-3 -->
+                <!-- Adicionada classe card-img-top para ajustar a imagem ao card -->
+                <img src="{{jogo.thumbnail}}" class="card-img-top" alt="{{jogo.title}}">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">{{jogo.title}}</h5>
+                    <p class="card-text mb-1"><strong>Gênero:</strong> {{jogo.genre}}</p>
+                    <p class="card-text text-muted"><strong>Plataforma:</strong> {{jogo.platform}}</p>
+
+                    <a href="{{jogo.game_url}}" class="btn btn-danger">Jogar</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
