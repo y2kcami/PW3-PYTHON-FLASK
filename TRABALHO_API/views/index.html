@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Início - DoramaFlix
+
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="container">
+
+        <p class="hero-label">
+            MUNDO DOS DORAMAS
+        </p>
+
+        <h1>
+            Encontre seu próximo
+            <span>dorama favorito</span>
+        </h1>
+
+        <p class="hero-description">
+
+            Descubra doramas coreanos,
+            suas histórias e informações
+            em um só lugar.
+
+        </p>
+
+        <a
+            href="{{ url_for('routes.doramas') }}"
+            class="btn btn-primary btn-lg"
+        >
+            Explorar doramas
+        </a>
+
+    </div>
+
+</section>
+
+<section class="container py-5">
+
+    <div class="home-introduction text-center">
+
+        <h2>
+            Mundo dos Doramas
+        </h2>
+
+        <p>
+            Seu espaço para descobrir novos doramas.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

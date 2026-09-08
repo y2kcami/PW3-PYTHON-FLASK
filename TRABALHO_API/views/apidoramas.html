@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+API de Doramas
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container py-5">
+
+
+    <h1>
+        API de Doramas
+    </h1>
+
+
+    <p class="text-muted">
+
+        Esta página apresenta os dados
+        obtidos através da API pública da TMDB.
+
+    </p>
+
+
+    <div class="alert alert-dark">
+
+        <strong>
+            API utilizada:
+        </strong>
+
+        TMDB
+
+
+        <br>
+
+
+        <strong>
+            Endpoint utilizado:
+        </strong>
+
+        /3/discover/tv
+
+
+        <br>
+
+
+        <strong>
+            Filtro:
+        </strong>
+
+        Produções da Coreia do Sul
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+        {% for dorama in doramas %}
+
+
+        <div class="col-md-4">
+
+
+            <div class="card h-100">
+
+
+                {% if dorama.imagem %}
+
+                <img
+                    src="{{ dorama.imagem }}"
+                    class="card-img-top api-img"
+                    alt="{{ dorama.titulo }}"
+                >
+
+                {% endif %}
+
+
+                <div class="card-body">
+
+
+                    <h5>
+
+                        {{ dorama.titulo }}
+
+                    </h5>
+
+
+                    <p>
+
+                        <strong>
+                            ID TMDB:
+                        </strong>
+
+                        {{ dorama.id }}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Ano:
+                        </strong>
+
+                        {{ dorama.ano }}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Gênero:
+                        </strong>
+
+                        {{ dorama.genero }}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Avaliação:
+                        </strong>
+
+                        ⭐
+
+                        {{ "%.1f"|format(dorama.avaliacao or 0) }}
+
+                    </p>
+
+
+                    <a
+                        href="{{ url_for('routes.dorama_info', id=dorama.id) }}"
+                        class="btn btn-primary"
+                    >
+
+                        Ver detalhes
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        {% endfor %}
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

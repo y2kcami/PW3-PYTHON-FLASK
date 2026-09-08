@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+{{ dorama.titulo if dorama else "Dorama" }}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container py-5">
+
+
+    {% if erro %}
+
+
+    <div class="alert alert-danger">
+
+        {{ erro }}
+
+    </div>
+
+
+    {% elif dorama %}
+
+
+    <div class="row g-5">
+
+
+        <div class="col-md-4">
+
+
+            {% if dorama.imagem %}
+
+            <img
+                src="{{ dorama.imagem }}"
+                class="img-fluid rounded shadow"
+                alt="{{ dorama.titulo }}"
+            >
+
+            {% else %}
+
+            <div class="sem-imagem detalhe">
+
+                Sem imagem
+
+            </div>
+
+            {% endif %}
+
+
+        </div>
+
+
+        <div class="col-md-8">
+
+
+            <span class="badge bg-primary mb-3">
+
+                Dorama
+
+            </span>
+
+
+            <h1>
+
+                {{ dorama.titulo }}
+
+            </h1>
+
+
+            {% if dorama.titulo_original %}
+
+            <p class="text-muted">
+
+                {{ dorama.titulo_original }}
+
+            </p>
+
+            {% endif %}
+
+
+            <p class="rating">
+
+                ⭐
+
+                {{ "%.1f"|format(dorama.avaliacao or 0) }}
+
+                / 10
+
+            </p>
+
+
+            <hr>
+
+
+            <div class="row">
+
+
+                <div class="col-md-6">
+
+
+                    <p>
+
+                        <strong>
+                            Ano:
+                        </strong>
+
+                        {{ dorama.ano }}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            País:
+                        </strong>
+
+                        {{ dorama.pais }}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Gênero:
+                        </strong>
+
+                        {{ dorama.genero }}
+
+                    </p>
+
+
+                </div>
+
+
+                <div class="col-md-6">
+
+
+                    <p>
+
+                        <strong>
+                            Episódios:
+                        </strong>
+
+                        {{ dorama.episodios or "Não informado" }}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Temporadas:
+                        </strong>
+
+                        {{ dorama.numero_temporadas or "Não informado" }}
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Status:
+                        </strong>
+
+                        {{ dorama.status }}
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+            <h3 class="mt-4">
+
+                Sinopse
+
+            </h3>
+
+
+            <p class="descricao">
+
+                {{ dorama.sinopse }}
+
+            </p>
+
+
+            <a
+                href="{{ url_for('routes.doramas') }}"
+                class="btn btn-secondary mt-3"
+            >
+
+                Voltar
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+    {% endif %}
+
+
+</div>
+
+
+{% endblock %}
